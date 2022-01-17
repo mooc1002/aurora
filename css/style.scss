@@ -139,6 +139,12 @@ body {
     width: 100%;
     margin: 50px auto;
 
+    & a {
+        display: flex;
+        text-decoration: none;
+        color: #000;
+    }
+
     & h2 {
         font-size: 35px;
         text-align: center;
@@ -150,8 +156,6 @@ body {
         margin: 20px auto;
         padding-bottom: 20px;
         width: 60%;
-        display: flex;
-        justify-content: center;
         border-bottom: 1px solid gray;
     }
 }
@@ -173,7 +177,7 @@ body {
         &-box {
             width: 25%;
             height: auto;
-          //  box-shadow: 0 0 10px black;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -186,6 +190,12 @@ body {
 
             & p {
                 width: 80%;
+                margin-top: 0;
+
+                &.title {
+                    margin-top: 15px;
+                    text-align: center;
+                }
             }
 
             & .btn {
@@ -260,7 +270,7 @@ body {
         }
 
         & .btn {
-            margin-top: 30px;
+            margin: 30px auto;
             width: 200px;
             height: 45px;
             background: linear-gradient(-45deg,#00d4ff,#35e39c,#020024);
@@ -318,7 +328,7 @@ body {
             margin: 0 auto;
             text-align: center;
             font-size: 30px;
-            border-bottom: 3px solid yellow;
+            border-bottom: 3px solid rgba(235, 235, 24, 0.856);
             padding-bottom: -10px;
         }
     
@@ -346,7 +356,7 @@ body {
         align-items: center;
         justify-content: center;
 
-        & h5 {
+        & h6 {
             font-size: 25px;
             margin-top: 0;
             margin-bottom: 0;

@@ -18,8 +18,8 @@
     font-weight: 600;
     top: -100%;
     left: 0;
-    -webkit-transition: all 1.3s;
-    transition: all 1.3s;
+    -webkit-transition: all  .7s;
+    transition: all  .7s;
   }
   .mainvisual header .header-nav .header-ul {
     padding-left: 0;
@@ -51,8 +51,8 @@
     border-radius: 5px;
     background-color: black;
     margin-bottom: 5px;
-    -webkit-transition: all 1.2s;
-    transition: all 1.2s;
+    -webkit-transition: all .7s;
+    transition: all .7s;
   }
   .mainvisual header .sp-nav .bar:nth-child(1) {
     position: absolute;
@@ -132,7 +132,13 @@
     margin: 20px auto;
   }
   .service-detail-box p {
-    margin-top: 5px;
+    margin-top: 0px;
+  }
+  .service-detail-box p.title {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
   }
   .shop {
     -webkit-box-orient: vertical;
