@@ -1,12 +1,50 @@
+@import url(sp.css);
 
 body {
     margin: 0;
 }
 
-@import url(sp.css);
+* {
+    margin: 0;
+    padding: 0;
+}
+
+$btnColor:linear-gradient(-45deg,#00d4ff,#35e39c,#020024);
+$btnHover:linear-gradient(-45deg,#020024,#00d4ff,#35e39c);
+$head:#35e39c;
+$headSize:30px;
+$bgGray:rgba($color: lightgray, $alpha: .3);
+
+ .btn {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    background: $btnColor;
+    margin: 0 auto;
+    transition: all 2s;
+
+    &:hover {
+        background: $btnHover;
+    }
+    & a {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+
+    }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 35px;
+    color: $head;
+    text-align: center;
+}
 
 .mainvisual {
-    width: 100%;
     height: 100vh;
     background-image: url(../images/aurora.jpg);
     background-size: cover;
@@ -32,6 +70,7 @@ body {
             align-items: center;
 
             & a {
+                display: flex;
                 text-decoration: none;
                 color: white;
             }
@@ -136,52 +175,47 @@ body {
 }
 
 .news {
-    width: 100%;
     margin: 50px auto;
-
-    & a {
+    
+    a {
         display: flex;
         text-decoration: none;
         color: #000;
     }
+    
 
-    & h2 {
-        font-size: 35px;
-        text-align: center;
-        color: #35e39c;
-
-    }
+  
 
     & dl {
         margin: 20px auto;
         padding-bottom: 20px;
         width: 60%;
         border-bottom: 1px solid gray;
+
+        & dt  {
+            width: 20%;
+        }
+        & dd {
+            width: 80%;
+        }
+
     }
 }
 
 .service {
-    width: 100%;
     margin: 0 auto;
-
-    & h3 {
-        text-align: center;
-        font-size: 36px;
-        color: #35e39c;
-    }
 
     &-detail {
         display: flex;
         justify-content: space-around;
 
         &-box {
-            width: 25%;
-            height: auto;
-
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            width: 25%;
+            height: auto;
 
             & img {
                 width: 100%;
@@ -190,34 +224,12 @@ body {
 
             & p {
                 width: 80%;
-                margin-top: 0;
+                margin-bottom: 10px;
 
                 &.title {
-                    margin-top: 15px;
+                    font-weight: bold;
+                    margin-top: 10px;
                     text-align: center;
-                }
-            }
-
-            & .btn {
-                width: 200px;
-                height: 40px;
-                border-radius: 20px;
-                background: linear-gradient(-45deg,#00d4ff,#35e39c,#020024);
-                margin: 0 auto;
-                transition: all 2s;
-        
-                &:hover {
-                    background: linear-gradient(-45deg,#020024,#00d4ff,#35e39c);
-                }
-                & a {
-                    height: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    text-decoration: none;
-                    font-weight: 600;
-        
                 }
             }
         }
@@ -227,13 +239,12 @@ body {
 }
 
 .shop {
+    display: flex;
     margin-top: 50px;
-    width: 100%;
     height: 500px;
     background-image: url(../images/bg.png);
     background-repeat: no-repeat;
     background-position-x: right;
-    display: flex;
 
     &-left {
         width: 50%;
@@ -254,48 +265,19 @@ body {
         align-items: center;
         justify-content: center;
 
-        & h3 {
-            color: #35e39c;
-            margin-bottom: 0;
-            font-size: 36px;
-        }
-        
         & span {
             color: #35e39c;
             margin-top: 0;
         }
 
         & p {
-            margin-top: 30px;
-        }
-
-        & .btn {
             margin: 30px auto;
-            width: 200px;
-            height: 45px;
-            background: linear-gradient(-45deg,#00d4ff,#35e39c,#020024);
-            border-radius: 30px;
-
-            &:hover {
-                background: linear-gradient(-45deg,#020024,#00d4ff,#35e39c);
-            }
-    
-            & a {
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-decoration: none;
-                color: white;
-                font-weight: 600;
-            }
         }
     }
 }
 
 .company {
     display: inline-block;
-    width: 100%;
     height: 650px;
     margin-top: 50px;
     background-image: url(../images/fin.jpg);
@@ -313,9 +295,9 @@ body {
         & h5 {
             margin-top: 0;
             text-align: center;
-            font-size: 35px;
+            font-size: $headSize;
             margin-bottom: 0;
-            color: #35e39c;
+            color: $head;
         }
         & span {
             display: block;
@@ -327,7 +309,7 @@ body {
             width: 40%;
             margin: 0 auto;
             text-align: center;
-            font-size: 30px;
+            font-size: $headSize;
             border-bottom: 3px solid rgba(235, 235, 24, 0.856);
             padding-bottom: -10px;
         }
@@ -342,123 +324,59 @@ body {
 }
 
 .detail {
+    display: flex;
     width: 60%;
     height: 300px;
     margin: 50px auto;
-    display: flex;
 
     &-left {
-        width: 50%;
-        height: 100%;
-        background-color: rgba($color: lightgray, $alpha: .3);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 50%;
+        height: 100%;
+        background-color: $bgGray;
+       
 
-        & h6 {
-            font-size: 25px;
-            margin-top: 0;
-            margin-bottom: 0;
+        & p {
+            margin-top: 5px;
+            margin-bottom: 15px;
         }
 
-
-        & .btn {
-            margin-top: 30px;
-            width: 200px;
-            height: 45px;
-            background: linear-gradient(-45deg,#00d4ff,#35e39c,#020024);
-            border-radius: 30px;
-
-            &:hover {
-                background: linear-gradient(-45deg,#020024,#00d4ff,#35e39c);
-            }
-    
-            & a {
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-decoration: none;
-                color: white;
-                font-weight: 600;
-            }
-        }
     }
     &-right {
         width: 50%;
-        height: 100%;
         background-image: url(../images/aurora.jpg);
         background-size: cover;
     }
 }
 
 .contact {
-    width: 100%;
-    height: 500px;
-    background-color: rgba($color: lightgray, $alpha: .3);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
-    & h5 {
-     //   text-align: center;
-        color: #35e39c;
-        font-size: 30px;
-        margin-bottom: 0;
-    }
+    height: 500px;
+    background-color: $bgGray;
 
     & p {
-        color: black;
-    }
+        margin-top: 10px;
 
-    & .btn {
-        width: 200px;
-        height: 45px;
-        background: linear-gradient(-45deg,#00d4ff,#35e39c,#020024);
-        border-radius: 30px;
-
-        &:hover {
-            background: linear-gradient(-45deg,#020024,#00d4ff,#35e39c);
-        }
-
-
-        & a {
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
+        &.row-2 {
+            margin-bottom: 10px;
         }
     }
 }
 
 footer {
-    display: inline-block;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 60px;
     background-color: #000;
-
-    & nav {
-        display: flex;
-        justify-content: center;
-
-        & ul {
-            display: flex;
-
-            & li {
-                cursor: pointer;
-                color: white;
-                list-style: none;
-                margin: 0 20px;
-                font-weight: 600;
-            }
-        }
-    }
+    color: #fff;
+    font-weight: bold;
 }
 
 
